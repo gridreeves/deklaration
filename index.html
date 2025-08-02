@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <title>Inkomstdeklaration 2 – Sida 1 (HTML Replica)</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #eee;
+      padding: 2rem;
+    }
+
+    .page {
+      width: 794px;
+      background: white;
+      margin: auto;
+      padding: 40px;
+      border: 1px solid #999;
+    }
+
+    .top-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      margin-bottom: 2rem;
+    }
+
+    .skv-info {
+      font-size: 13px;
+      line-height: 1.4;
+      width: 300px;
+    }
+
+    .form-title {
+      text-align: right;
+    }
+
+    .form-title h1 {
+      font-size: 16px;
+      margin: 0;
+    }
+
+    .form-title .sub {
+      font-size: 14px;
+    }
+
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .form-block {
+      border: 1px solid #000;
+      padding: 0.5rem;
+    }
+
+    .form-block h2 {
+      font-size: 14px;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      border-bottom: 1px solid #000;
+      padding-bottom: 0.3rem;
+    }
+
+    .field-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .field-row label {
+      font-size: 13px;
+      width: 65%;
+    }
+
+    .field-row input {
+      width: 30%;
+      padding: 2px 4px;
+      font-size: 14px;
+    }
+
+    .section {
+      margin-bottom: 1.5rem;
+    }
+
+    .horizontal-fields {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .horizontal-fields div {
+      flex: 1;
+    }
+
+    .small-label {
+      font-size: 13px;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    input[type="text"], input[type="date"], input[type="number"] {
+      width: 100%;
+      padding: 4px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Top Section -->
+    <div class="top-header">
+      <div class="skv-info">
+        <strong>Skatteverket</strong><br>
+        Inläsningscentralen<br>
+        Inkomstdeklaration 2 + bilagor<br>
+        FE 8000<br>
+        107 75 Stockholm<br><br>
+        Skatteverket<br>
+        0771-567 567<br><br>
+        Information om hur man fyller i blanketten finns i broschyren<br>
+        <em>Skatteregler för aktie- och handelsbolag, SKV 294.</em><br>
+        Ange belopp i hela kronor.
+      </div>
+
+      <div class="form-title">
+        <h1>Inkomstdeklaration 2</h1>
+        <div class="sub">Aktiebolag, ekonomisk förening m.fl.</div>
+        <div style="margin-top: 1rem;">
+          <label class="small-label">Organisationsnummer</label>
+          <input type="text" name="orgnr">
+        </div>
+        <div style="margin-top: 1rem;">
+          <label class="small-label">Räkenskapsår</label>
+          <div class="horizontal-fields">
+            <div>
+              <label class="small-label">Fr.o.m.</label>
+              <input type="date" name="start">
+            </div>
+            <div>
+              <label class="small-label">T.o.m.</label>
+              <input type="date" name="end">
+            </div>
+          </div>
+        </div>
+        <div style="margin-top: 1rem;">
+          <label class="small-label">Namn (firma) adress</label>
+          <input type="text" name="company">
+        </div>
+      </div>
+    </div>
+
+    <!-- Datumfält -->
+    <div class="section">
+      <label class="small-label">Datum när blanketten fylls i:</label>
+      <input type="date" name="datum">
+    </div>
+
+    <!-- First Row: Inkomstskatt + Fastighetsavgift -->
+    <div class="grid-2col">
+      <div class="form-block">
+        <h2>Underlag för inkomstskatt</h2>
+        <div class="field-row">
+          <label for="f1_1">1.1 Överskott av näringsverksamhet</label>
+          <input type="number" id="f1_1" name="f1_1">
+        </div>
+        <div class="field-row">
+          <label for="f1_2">1.2 Underskott av näringsverksamhet</label>
+          <input type="number" id="f1_2" name="f1_2">
+        </div>
+      </div>
+
+      <div class="form-block">
+        <h2>Underlag för fastighetsavgift</h2>
+        <div class="field-row">
+          <label for="f1_8">1.8 Småhus / ägarlägenhet</label>
+          <input type="number" id="f1_8" name="f1_8">
+        </div>
+        <div class="field-row">
+          <label for="f1_9">1.9 Hyreshus: bostäder</label>
+          <input type="number" id="f1_9" name="f1_9">
+        </div>
+      </div>
+    </div>
+
+    <!-- Second Row: Riskskatt + Fastighetsskatt -->
+    <div class="grid-2col">
+      <div class="form-block">
+        <h2>Underlag för riskskatt</h2>
+        <div class="field-row">
+          <label for="f1_3">1.3 Kreditinstituts underlag för riskskatt</label>
+          <input type="number" id="f1_3" name="f1_3">
+        </div>
+      </div>
+
+      <div class="form-block">
+        <h2>Underlag för fastighetsskatt</h2>
+        <div class="field-row">
+          <label for="f1_10">1.10 Småhus/ägarlägenhet: tomtmark, byggnad under uppförande</label>
+          <input type="number" id="f1_10" name="f1_10">
+        </div>
+        <div class="field-row">
+          <label for="f1_11">1.11 Hyreshus: tomtmark, bostäder under uppförande</label>
+          <input type="number" id="f1_11" name="f1_11">
+        </div>
+        <div class="field-row">
+          <label for="f1_12">1.12 Hyreshus: lokaler</label>
+          <input type="number" id="f1_12" name="f1_12">
+        </div>
+        <div class="field-row">
+          <label for="f1_13">1.13 Industrienhet och elproduktionsenhet: värmekraftverk</label>
+          <input type="number" id="f1_13" name="f1_13">
+        </div>
+        <div class="field-row">
+          <label for="f1_14">1.14 Elproduktionsenhet: vattenkraftverk</label>
+          <input type="number" id="f1_14" name="f1_14">
+        </div>
+        <div class="field-row">
+          <label for="f1_15">1.15 Elproduktionsenhet: vindkraftverk</label>
+          <input type="number" id="f1_15" name="f1_15">
+        </div>
+      </div>
+    </div>
+
+    <!-- Third Row: Särskild löneskatt + Avkastningsskatt -->
+    <div class="grid-2col">
+      <div class="form-block">
+        <h2>Underlag för särskild löneskatt</h2>
+        <div class="field-row">
+          <label for="f1_4">1.4 Underlag för särskild löneskatt på pensionskostnader</label>
+          <input type="number" id="f1_4" name="f1_4">
+        </div>
+        <div class="field-row">
+          <label for="f1_5">1.5 Negativt underlag för särskild löneskatt</label>
+          <input type="number" id="f1_5" name="f1_5">
+        </div>
+      </div>
+
+      <div class="form-block">
+        <h2>Underlag för avkastningsskatt</h2>
+        <div class="field-row">
+          <label for="f1_6a">1.6 a Försäkringsföretag m.fl. 15%</label>
+          <input type="number" id="f1_6a" name="f1_6a">
+        </div>
+        <div class="field-row">
+          <label for="f1_6b">1.6 b Utländska pensionsförsäkringar 15%</label>
+          <input type="number" id="f1_6b" name="f1_6b">
+        </div>
+        <div class="field-row">
+          <label for="f1_7a">1.7 a Försäkringsföretag m.fl. 30%</label>
+          <input type="number" id="f1_7a" name="f1_7a">
+        </div>
+        <div class="field-row">
+          <label for="f1_7b">1.7 b Utländska kapitalförsäkringar 30%</label>
+          <input type="number" id="f1_7b" name="f1_7b">
+        </div>
+      </div>
+    </div>
+
+    <!-- Final Block: Skattereduktion -->
+    <div class="form-block" style="margin-bottom: 2rem;">
+      <h2>Underlag för skattereduktion</h2>
+      <div class="field-row">
+        <label for="f1_16">1.16 Förnybar el (kilowattimmar)</label>
+        <input type="number" id="f1_16" name="f1_16">
+      </div>
+    </div>
+
+    <!-- Signature and Övriga upplysningar -->
+    <div class="grid-2col" style="margin-top: 2rem; align-items: start;">
+      <!-- Signature block -->
+      <div class="form-block">
+        <h2>Underskrift</h2>
+        <p style="font-size: 13px;">Behörig firmatecknares namnteckning</p>
+        <div class="field-row">
+          <label for="sign_name">Namnförtydligande</label>
+          <input type="text" id="sign_name" name="sign_name">
+        </div>
+        <div class="field-row">
+          <label for="sign_phone">Telefonnummer</label>
+          <input type="text" id="sign_phone" name="sign_phone">
+        </div>
+      </div>
+
+      <!-- Övriga upplysningar -->
+      <div class="form-block">
+        <h2>Övriga upplysningar</h2>
+        <div class="field-row" style="align-items: flex-start;">
+          <input type="checkbox" id="extra_info" name="extra_info" style="margin-top: 4px;">
+          <label for="extra_info" style="width: auto; font-size: 13px;">
+            Upplysningar kan bara lämnas i särskild skrivelse. <br>
+            Kryssa här om övrig upplysning lämnats<br>
+            (t.ex. begäran om avräkning av utländsk skatt).
+          </label>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</body>
+</html>
